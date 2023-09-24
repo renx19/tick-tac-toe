@@ -1,0 +1,230 @@
+body{
+    background-color: rgb(65, 64, 64);
+}
+h1{
+    color: aqua;
+    font-size: 50px;
+}
+p{
+    color: aqua;
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+#gameboard {
+    width: 300px;
+    height: 300px;
+    background-color: rgb(61, 180, 180);
+    display: flex;
+    flex-wrap: wrap;
+    border: solid;
+}
+
+#score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#playerXScoreContainer,
+#playerOScoreContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#playerXScoreContainer img,
+#playerOScoreContainer img {
+    width: 95px; /* Adjust the image size as needed */
+    height: 100px; /* Adjust the image size as needed */
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#info {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    color: aqua;
+    font-size: 30px;
+}
+
+#container {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(5, 5, 5);
+    border: solid 2px aqua;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: solid 20px aqua;
+}
+
+.cross {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform: rotate(45deg); /* Rotate the cross by 45 degrees */
+}
+
+
+.cross::before, .cross::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(184, 70, 70);
+}
+
+.cross::before {
+    left: 0;
+    width: 100%;
+    height: 20%; /* Adjust the thickness of the cross */
+    top: 40%; /* Adjust the vertical position of the horizontal line */
+}
+
+.cross::after {
+    top: 0;
+    height: 100%;
+    width: 20%; /* Adjust the thickness of the cross */
+    left: 40%; /* Adjust the horizontal position of the vertical line */
+}
+
+
+
+
+#resetButton {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    border: 3px solid rgb(76, 224, 224);
+    cursor: pointer;
+    position: relative;
+    background-color: black;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    width: 100px;
+    height: 30px;
+    border-radius: 10%;
+ 
+    margin-bottom: 20px;
+   }
+   
+   
+    #resetButton::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(76, 224, 224);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+   }
+   
+   
+#resetButton:hover::before {
+    transform: translateX(0);
+   }
+
+
+   #newGameButton {
+    position: relative;
+    background-color: transparent;
+    color: #e8e8e8;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 10%;
+    width: 120px;
+    height: 60px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  #newGameButton::before {
+    content: "New Game";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(135deg,#7b4397,#dc2430 );
+    transform: translate(0%,90%);
+    z-index: 99;
+    position: relative;
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  #newGameButton::after {
+    content: "Click ";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform-origin: top;
+    transform: translate(0%,-100%);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  #newGameButton:hover::before {
+    transform: translate(0%,0%);
+  }
+  
+  #newGameButton:hover::after {
+    transform: translate(0%,-200%);
+  }
+  
+  #newGameButton:focus {
+    outline: none;
+  }
+  
+  #newGameButton:active {
+    scale: 0.95;
+  }
+  
+  
+  
